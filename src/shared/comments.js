@@ -136,7 +136,6 @@ export const COMMENTS =
         author: "Paul McVites",
         date: "2014-09-05T17:57:28.556094Z"
     },
-    
     {
         id: 17,
         dishId: 3,
