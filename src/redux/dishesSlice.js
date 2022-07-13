@@ -1,39 +1,46 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-import { DISHES } from "../shared/dishes"
-
-export const dishesSlice = createSlice({
-	name: "dishes",
-	initialState: {
-		isLoading: true,
-		errMess: null,
-		dishes: [],
+export const DISHES = [
+	{
+		id: 0,
+		name: "Uthappizza",
+		image: "../assets/images/uthappizza.png",
+		category: "mains",
+		label: "Hot",
+		price: "4.99",
+		featured: true,
+		description:
+			"A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
 	},
-	reducers: {
-		dishesLoading: (state, action) => {
-			state.isLoading = true
-			state.errMess = null
-			state.dishes = []
-		},
-		dishesFailed: (state, action) => {
-			state.isLoading = false
-			state.errMess = action.payload
-			state.dishes = []
-		},
-		addDishes: (state, action) => {
-			state.isLoading = false
-			state.errMess = null
-			state.dishes = action.payload
-		},
+	{
+		id: 1,
+		name: "Zucchipakoda",
+		image: "../assets/images/zucchipakoda.png",
+		category: "appetizer",
+		label: "",
+		price: "1.99",
+		featured: false,
+		description:
+			"Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce",
 	},
-})
-
-export const fetchDishes = () => async (dispatch, getState) => {
-	dispatch(dishesLoading(true))
-	setTimeout(() => {
-		dispatch(addDishes(DISHES))
-	}, 2000)
-}
-
-export const { addDishes, dishesLoading, dishesFailed } = dishesSlice.actions
-export default dishesSlice.reducer
+	{
+		id: 2,
+		name: "Vadonut",
+		image: "../assets/images/vadonut.png",
+		category: "appetizer",
+		label: "New",
+		price: "1.99",
+		featured: false,
+		description:
+			"A quintessential ConFusion experience, is it a vada or is it a donut?",
+	},
+	{
+		id: 3,
+		name: "ElaiCheese Cake",
+		image: "../assets/images/elaicheesecake.png",
+		category: "dessert",
+		label: "",
+		price: "2.99",
+		featured: false,
+		description:
+			"A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms",
+	},
+]

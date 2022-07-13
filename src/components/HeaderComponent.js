@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import {
 	Navbar,
 	NavbarBrand,
+	Jumbotron,
 	Nav,
 	NavbarToggler,
 	Collapse,
@@ -17,15 +18,12 @@ import {
 	Label,
 } from "reactstrap";
 import logo from "../assets/images/logo.png";
-
 const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false)
 	const [isModalOpen, setIsModalOpen] = useState(false)
-
 	const username = useRef(null)
 	const password = useRef(null)
 	const remember = useRef(null)
-
 	function handleLogin(e) {
 		e.preventDefault()
 		setIsModalOpen(!isModalOpen)
@@ -51,7 +49,6 @@ const Header = () => {
 							alt="Ristorante Con Fusion"
 						/>
 					</NavbarBrand>
-
 					<Collapse isOpen={isNavOpen} navbar>
 						<Nav navbar>
 							<NavItem>
@@ -109,7 +106,6 @@ const Header = () => {
 						</div>
 					</div>
 				</div>
-
       </div>
 			<Modal
 				isOpen={isModalOpen}
@@ -154,5 +150,4 @@ const Header = () => {
 		</>
 	)
 }
-
 export default Header
