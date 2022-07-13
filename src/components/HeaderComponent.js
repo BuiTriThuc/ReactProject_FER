@@ -153,7 +153,6 @@ const Header = () => {
 			</Modal>
 		</>
 	)
-	
 }
 
 export default Header
